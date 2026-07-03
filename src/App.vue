@@ -22,7 +22,7 @@
 
   <section class="sobre nós">
     <h2>Cultivando conexões com a natureza</h2>
-
+    <div>
     <p>
       O GreenNest nasceu para aproximar pessoas e plantas. Muitas espécies são descartadas ou
       deixadas de lado por falta de espaço ou tempo de seus antigos cuidadores. Aqui, elas ganham
@@ -30,6 +30,7 @@
     </p>
 
     <img src="/public/imagens/flor.png" alt="flor" />
+    </div>
   </section>
 
   <section class="adotar">
@@ -53,6 +54,9 @@
 
 <style scoped>
 .banner{
+  position: relative;
+   width: 100%;
+   min-height: 100vh;
   video{
     width: 100%;
     height: 100%;
@@ -63,10 +67,14 @@
 .banner h1{
   font-size: 5rem;
   color: #A6B985;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  /*posição*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .intro{
@@ -90,11 +98,15 @@
 .sobre.nós{
   background-color: #213435;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 3rem;
   color: #213435;
+}
+.sobre.nós div{
+  display: flex;
 }
 .sobre.nós h2{
   font-size: 2rem;
