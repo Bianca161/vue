@@ -1,8 +1,15 @@
 <script setup>
+defineProps({
+  name: "App",
+});
 
 </script>
 
 <template>
+
+  <header>
+    <img src="/public/imagens/logo.png" alt="logo">
+  </header>
 
   <section class="banner">
   <video autoplay muted loop playsinline src="/public/videos/planta.mp4"></video>
@@ -41,7 +48,7 @@
       espécies ideais para iniciantes, ambientes internos ou locais com bastante iluminação.
     </p>
 
-    <button>Ver plantas</button>
+    <button>Ver Plantas</button>
   </section>
 
   <footer>
@@ -53,6 +60,16 @@
 </template>
 
 <style scoped>
+header{
+  background-color: #213435;
+  margin: 0;
+}
+header img{
+  display: block;
+  margin: 0 auto;
+  padding: 0vw 85vw;
+}
+
 .banner{
   position: relative;
    width: 100%;
@@ -65,7 +82,7 @@
 }
 
 .banner h1{
-  font-size: 5rem;
+  font-size: 9rem;
   color: #A6B985;
   align-items: center;
   justify-content: center;
@@ -90,9 +107,14 @@
   color: #E1E3AC;
   border: none;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 3rem;
   cursor: pointer;
   border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+.intro p{
+  color: #213435;
+  font-size: 5rem;
 }
 
 .sobre.nós{
@@ -104,17 +126,23 @@
   text-align: center;
   padding: 3rem;
   color: #213435;
+  border-radius: 23px;
 }
 .sobre.nós div{
   display: flex;
 }
 .sobre.nós h2{
-  font-size: 2rem;
+  font-size: 4rem;
   color: #E1E3AC;
 }
 .sobre.nós p{
  color: #E1E3AC;
- font-size: 1.2rem;
+ font-size:4rem;
+}
+.sobre.nós img{
+  width: 200%;
+  height: 30%;
+  border-radius: 23px;
 }
 
 .adotar{
@@ -131,21 +159,32 @@
   color: #E1E3AC;
   border: none;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 4rem;
   cursor: pointer;
   border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
 .adotar h3{
-  font-size: 2rem;
+  font-size: 7rem;
   color: #213435;
+}
+.adotar p{
+  color: #213435;
+  font-size: 5rem;
 }
 
 footer{
   background-color: #213435;
 }
+footer img{
+  display: block;
+  margin: 0 auto;
+  padding: 7rem;
+}
 footer p{
   color: #FFFFFF;
   text-align: center;
   padding: 1rem;
+  font-size: 2rem;
 }
 </style>
