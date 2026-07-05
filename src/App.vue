@@ -1,18 +1,27 @@
 <script setup>
 defineProps({
-  name: "App",
-});
-
+  name: 'App',
+})
 </script>
 
 <template>
-
   <header>
-    <img src="/public/imagens/logo.png" alt="logo">
+    <img src="/public/imagens/logo.png" alt="logo" />
+
+    <nav>
+      <ul>
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li>
+          <a href="">Nossas Plantas</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <section class="banner">
-  <video autoplay muted loop playsinline src="/public/videos/planta.mp4"></video>
+    <video autoplay muted loop playsinline src="/public/videos/planta.mp4"></video>
 
     <h1>Dê um novo lar para uma planta.</h1>
   </section>
@@ -30,13 +39,13 @@ defineProps({
   <section class="sobre nós">
     <h2>Cultivando conexões com a natureza</h2>
     <div>
-    <p>
-      O GreenNest nasceu para aproximar pessoas e plantas. Muitas espécies são descartadas ou
-      deixadas de lado por falta de espaço ou tempo de seus antigos cuidadores. Aqui, elas ganham
-      uma nova oportunidade de florescer ao lado de alguém disposto a cuidar delas com carinho.
-    </p>
+      <p>
+        O GreenNest nasceu para aproximar pessoas e plantas. Muitas espécies são descartadas ou
+        deixadas de lado por falta de espaço ou tempo de seus antigos cuidadores. Aqui, elas ganham
+        uma nova oportunidade de florescer ao lado de alguém disposto a cuidar delas com carinho.
+      </p>
 
-    <img src="/public/imagens/flor.png" alt="flor" />
+      <img src="/public/imagens/flor.png" alt="flor" />
     </div>
   </section>
 
@@ -52,38 +61,38 @@ defineProps({
   </section>
 
   <footer>
-<img src="/public/imagens/logo.png" alt="logo">
+    <img src="/public/imagens/logo.png" alt="logo" />
 
-<p> &copy; Alguns direitos reservados</p>
+    <p>&copy; Alguns direitos reservados</p>
   </footer>
-
 </template>
 
 <style scoped>
-header{
+header {
+  display: flex;
+  justify-content: flex-end;
   background-color: #213435;
-  margin: 0;
+  padding: 10px 20px;
 }
-header img{
-  display: block;
-  margin: 0 auto;
-  padding: 0vw 85vw;
+header img {
+ max-height: 60px;
+  
 }
 
-.banner{
+.banner {
   position: relative;
-   width: 100%;
-   min-height: 100vh;
-  video{
+  width: 100%;
+  min-height: 100vh;
+  video {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
 
-.banner h1{
-  font-size: 9rem;
-  color: #A6B985;
+.banner h1 {
+  font-size: 6rem;
+  color: #a6b985;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -94,7 +103,7 @@ header img{
   transform: translate(-50%, -50%);
 }
 
-.intro{
+.intro {
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -102,9 +111,9 @@ header img{
   padding: 3rem;
   color: #213435;
 }
-.intro button{
+.intro button {
   background-color: #213435;
-  color: #E1E3AC;
+  color: #e1e3ac;
   border: none;
   padding: 1rem 2rem;
   font-size: 3rem;
@@ -112,12 +121,12 @@ header img{
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
-.intro p{
+.intro p {
   color: #213435;
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
-.sobre.nós{
+.sobre.nós {
   background-color: #213435;
   display: flex;
   flex-direction: column;
@@ -128,24 +137,24 @@ header img{
   color: #213435;
   border-radius: 23px;
 }
-.sobre.nós div{
+.sobre.nós div {
   display: flex;
 }
-.sobre.nós h2{
+.sobre.nós h2 {
+  font-size: 6rem;
+  color: #e1e3ac;
+}
+.sobre.nós p {
+  color: #e1e3ac;
   font-size: 4rem;
-  color: #E1E3AC;
 }
-.sobre.nós p{
- color: #E1E3AC;
- font-size:4rem;
-}
-.sobre.nós img{
+.sobre.nós img {
   width: 200%;
   height: 30%;
   border-radius: 23px;
 }
 
-.adotar{
+.adotar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -154,9 +163,9 @@ header img{
   padding: 3rem;
   color: #213435;
 }
-.adotar button{
+.adotar button {
   background-color: #213435;
-  color: #E1E3AC;
+  color: #e1e3ac;
   border: none;
   padding: 1rem 2rem;
   font-size: 4rem;
@@ -164,25 +173,25 @@ header img{
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
-.adotar h3{
-  font-size: 7rem;
+.adotar h3 {
+  font-size: 6rem;
   color: #213435;
 }
-.adotar p{
+.adotar p {
   color: #213435;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
-footer{
+footer {
   background-color: #213435;
 }
-footer img{
+footer img {
   display: block;
   margin: 0 auto;
   padding: 7rem;
 }
-footer p{
-  color: #FFFFFF;
+footer p {
+  color: #ffffff;
   text-align: center;
   padding: 1rem;
   font-size: 2rem;
