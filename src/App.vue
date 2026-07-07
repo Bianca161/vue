@@ -6,18 +6,9 @@ defineProps({
 
 <template>
   <header>
-    <img src="/public/imagens/logo.png" alt="logo" />
 
-    <nav>
-      <ul>
-        <li>
-          <a href="">Home</a>
-        </li>
-        <li>
-          <a href="">Nossas Plantas</a>
-        </li>
-      </ul>
-    </nav>
+
+    <img src="/public/imagens/logo.png" alt="logo" />
   </header>
 
   <section class="banner">
@@ -141,15 +132,16 @@ header img {
   display: flex;
 }
 .sobre.nós h2 {
-  font-size: 6rem;
+  font-size: 4rem;
   color: #e1e3ac;
 }
 .sobre.nós p {
   color: #e1e3ac;
-  font-size: 4rem;
+  font-size: 3rem;
+  text-align: center;
 }
 .sobre.nós img {
-  width: 200%;
+  width: 160%;
   height: 30%;
   border-radius: 23px;
 }
