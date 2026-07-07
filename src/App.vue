@@ -139,6 +139,7 @@ header img {
   color: #e1e3ac;
   font-size: 3rem;
   text-align: center;
+  margin: 28px;
 }
 .sobre.nós img {
   width: 160%;
@@ -166,26 +167,32 @@ header img {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
 .adotar h3 {
-  font-size: 6rem;
+  font-size: 4.5rem;
   color: #213435;
 }
 .adotar p {
   color: #213435;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 footer {
   background-color: #213435;
+  bottom: 0;
+  width:100vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
 }
 footer img {
-  display: block;
-  margin: 0 auto;
-  padding: 7rem;
+  /* display: block; */
+  width: 10%;
+  margin: 0;
+  padding: 10px;
 }
 footer p {
   color: #ffffff;
   text-align: center;
-  padding: 1rem;
-  font-size: 2rem;
+  padding: 10px;
+  font-size: 1rem;
 }
 </style>
