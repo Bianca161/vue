@@ -131,7 +131,7 @@ header h1 img {
 }
 
 .menu-icon {
-  width: 35px;
+  width: 65px;
   height: 30px;
   cursor: pointer;
   display: flex;
