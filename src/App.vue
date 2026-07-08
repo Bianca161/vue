@@ -7,6 +7,44 @@ defineProps({
 <template>
   <header>
 
+<!-- Menu hambúrguer (agora fica à esquerda) -->
+<div class="menu-hamburguer">
+<input type="checkbox" id="menu-toggle" />
+<label for="menu-toggle" class="menu-icon">
+<div class="linha"></div>
+<div class="linha"></div>
+<div class="linha"></div>
+</label>
+
+<!-- Overlay escuro (fora do menu) -->
+<label for="menu-toggle" class="backdrop"></label>
+
+<!-- Menu lateral -->
+<nav class="overlay">
+<RouterLink para="/">
+<img src="/public/imagens/logo.png" alt="logo" class="logo" />
+</RouterLink>
+<ul class="menu-list">
+<li>
+<RouterLink para="/">
+<i class="mdi mdi-home"></i> Home
+</RouterLink>
+</li>
+<li>
+<routerLink to="/Fauna-Marinha">
+<i class="mdi mdi-jellyfish"></i>
+Nossas plantas
+</routerLink>
+</li>
+</ul>
+</nav>
+</div>
+
+<h1 class="logo">
+<RouterLink para="/">
+<img src="/public/imagens/logo.png" alt="logo">
+</RouterLink>
+</h1>
 
     <img src="/public/imagens/logo.png" alt="logo" />
   </header>
@@ -59,15 +97,130 @@ defineProps({
 </template>
 
 <style scoped>
+
+/*====================================
+				HEADER
+=====================================*/
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
   display: flex;
-  justify-content: flex-end;
-  background-color: #213435;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #213435;
   padding: 10px 20px;
 }
-header img {
- max-height: 60px;
-  
+
+header h1 img {
+  height: 80px;
+  margin: 0 20px;
+}
+
+/*============ Menu hamburguer ===========*/
+.menu-hamburguer {
+  z-index: 1100;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1200;
+  position: relative;
+  transition: all 0.5s ease;
+  margin: 0 20px;
+}
+
+.menu-icon:hover .linha {
+  background: #ffffff;
+}
+
+div.linha {
+  height: 4px;
+  background:#A6B985;
+  border-radius: 2px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
+}
+
+/*============ Overlay escuro fora do menu ===========*/
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 900;
+}
+
+#menu-toggle:checked ~ .backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/*============ Menu lateral ===========*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  max-width: 350px;
+  height: 100%;
+  background: #213435;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+  padding: 40px 20px;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#menu-toggle:checked ~ .overlay {
+  transform: translateX(0);
+}
+
+/*============ Menu interno ===========*/
+.overlay .logo {
+  display: block;
+  margin: 0 auto 40px;
+  height: 60px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  margin: 20px 0;
+
+}
+
+.menu-list  a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: color 1s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-list a:hover {
+  color: #000000;
 }
 
 .banner {
@@ -107,7 +260,7 @@ header img {
   color: #e1e3ac;
   border: none;
   padding: 1rem 2rem;
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
@@ -132,7 +285,7 @@ header img {
   display: flex;
 }
 .sobre.nós h2 {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #e1e3ac;
 }
 .sobre.nós p {
@@ -142,7 +295,7 @@ header img {
   margin: 28px;
 }
 .sobre.nós img {
-  width: 160%;
+  width: 40%;
   height: 30%;
   border-radius: 23px;
 }
@@ -161,13 +314,13 @@ header img {
   color: #e1e3ac;
   border: none;
   padding: 1rem 2rem;
-  font-size: 4rem;
+  font-size: 2rem;
   cursor: pointer;
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
 .adotar h3 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   color: #213435;
 }
 .adotar p {
