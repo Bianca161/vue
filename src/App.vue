@@ -31,7 +31,7 @@ defineProps({
 </RouterLink>
 </li>
 <li>
-<routerLink to="/Fauna-Marinha">
+<routerLink to="/plantas">
 <i class="mdi mdi-jellyfish"></i>
 Nossas plantas
 </routerLink>
@@ -46,7 +46,7 @@ Nossas plantas
 </RouterLink>
 </h1>
 
-    <img src="/public/imagens/logo.png" alt="logo" />
+    
   </header>
 
   <section class="banner">
@@ -118,7 +118,7 @@ header {
 
 header h1 img {
   height: 80px;
-  margin: 0 20px;
+  margin: 0 40px;
 }
 
 /*============ Menu hamburguer ===========*/
@@ -191,11 +191,11 @@ div.linha {
   transform: translateX(0);
 }
 
-/*============ Menu interno ===========*/
+/*============ Menu interno - logo do menu que aparece ===========*/
 .overlay .logo {
   display: block;
   margin: 0 auto 40px;
-  height: 60px;
+  height: 80px;
 }
 
 .menu-list {
